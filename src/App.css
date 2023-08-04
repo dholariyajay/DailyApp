@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.popup {
+  background-color: #39c463;
+  opacity: 70%;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 40px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
