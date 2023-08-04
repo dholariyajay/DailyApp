@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
+import Badge from '@mui/material/Badge';
+import Chips from './Assets/Images/chips1.jpg'
+import {IoIosCart} from 'react-icons/io';
 
 
 function Counter() {
 
-    let [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
     const [showPopup, setShowPopup] = useState(false);
+    let [showCart, setShowCart] = useState(0);
+    const [showAddedPopup, setShowAddedPopup] = useState(false);
+
+    
 
 
     function handleDecreament (){
@@ -20,38 +27,52 @@ function Counter() {
 
     }
     function RemoveItems(){
-        setCount(0);
+      if(count===0){return null}
+        else{setCount(0);
+        setShowCart(0);
         setShowPopup(true);
         setTimeout(()=>{
             setShowPopup(false);
 
-        },1500);
+        },1000);}
     }
+    function AddToCart(){
+      if(count===0){return null}
+      else{setShowCart(count);
+      setShowAddedPopup(true);
 
-
+      setTimeout(() => {
+        setShowAddedPopup(false);
+      }, 1000);}
+    }
+    
 
   return (
     <>
         {/* Popup */}
-      {showPopup && (
-        <div className="popup">
-          <p>Success!! All items removed.</p>
-        </div>
-      )}
+      {showPopup && (<div className="popup"><p className='font'> All items removed.</p></div>)}
+      {showAddedPopup && (<div className="popup"><p className="font">Success!! Added to the cart</p>  </div>)}
         <div>
-            <h1>Counter App</h1>
+          <h1 className='font'>Grocery Store 
+            <Badge className='font' badgeContent={showCart} color="primary">
+              <IoIosCart className='text-right'/>
+            </Badge>
+          </h1>
         </div>
-
+        
+          
+      
+   
         <div className='div'>
 
             <button type="button" class="btn btn-outline-primary" onClick={handleDecreament}>-</button>
-            <h3> {count}  </h3>
+            <Badge className='font' badgeContent={count} color="success"><img className='chips1' src={Chips} alt='Chips'/></Badge>
             <button type="button" class="btn btn-outline-primary" onClick={handleIncrement}>+</button>
-            <br/>
-            <br/>
-            <button type="button" class="btn btn-info" onClick={RemoveItems}>Remove All items</button>
-
-            
+            <br/><br/>
+            <button type="button" className="btn btn-info font" onClick={AddToCart}>Add Items to Cart</button>          
+            <br/><br/>
+            <button type="button" className="btn btn-info font" onClick={RemoveItems}>Remove All items from the Cart</button>          
+       
         </div>
     </>
   )

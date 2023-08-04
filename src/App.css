@@ -42,15 +42,28 @@
 }
 
 .popup {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
   background-color: #39c463;
-  opacity: 70%;
+  width: 50%;
+  opacity: 95%;
   color: white;
-  padding: 20px;
+  padding: 5px;
   text-align: center;
-  border-radius: 40px;
+  border-radius: 10px;
   position: absolute;
-  top: 0;
+  top: 40;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+}
+.chips1 {
+  width: 180px;
+  height: 180px; 
+}
+.font{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.last{
+  text-align-last: end;
 }

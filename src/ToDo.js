@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 
 const ToDo = () => {
 
@@ -10,7 +11,7 @@ const ToDo = () => {
     <>
     <div>
         <h3>ToDo List</h3>
-        <p>To be continued...</p>
+        <p>Under Construction...</p>
     </div>
     </>
   )
