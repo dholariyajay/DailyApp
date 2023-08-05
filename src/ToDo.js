@@ -33,7 +33,6 @@ const ToDo = () => {
     }, 1000);
   };
 
-  console.log(setTodo);
 
   return (
     <>
@@ -46,6 +45,7 @@ const ToDo = () => {
 
         
     </div>
+    <div>&nbsp;&nbsp;&nbsp;</div>
     <div className="card" >
       <ul className="list-group list-group-flush">
         {todo.map((todo, index)=> (
@@ -61,7 +61,7 @@ const ToDo = () => {
       </ul>
     </div>
     <div className="card" >
-        <h2>Done List</h2>
+    
         <ul className="list-group list-group-flush">
           {canceledTodos.map((todo, index) => (
             <li className="list-group-item" key={index}>

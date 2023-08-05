@@ -67,3 +67,29 @@
 .last{
   text-align-last: end;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.vertical-table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.vertical-table-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.vertical-table-cell {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: center; /* Center text in cells */
+}
